@@ -22,7 +22,7 @@ public:
 		return m_cents;
 	}
 
-	friend std::ostream& operator<<(std::ostream& out, const Cents& cents)
+	friend std::ostream& operator<<(std::ostream& out,const Cents& cents)
 	{
 		out << cents.m_cents;
 		return out;
@@ -32,7 +32,7 @@ public:
 	//{
 	//	return -m_cents;
 	//}
-	Cents operator-() const
+	Cents operator-()
 	{
 		return Cents(-m_cents);
 	}
@@ -48,6 +48,8 @@ int main()
 	Cents cents1(6);
 	Cents cents2(2);
 
+	cout << cents1 << endl;
+	cout << -cents1 << endl;
 	cout << -(-cents1) << endl;
 	cout << -(-(-cents1)) << endl;
 	cout << -Cents(-20) << endl;
