@@ -2,6 +2,7 @@
 //
 
 #include <iostream>
+#include <fstream>
 
 class Point
 {
@@ -22,16 +23,37 @@ public:
 		out << "[" << p.m_x << ", " << p.m_y << ", " << p.m_z << "]";
 		return out;
 	}
+	friend std::istream& operator>>(std::istream& in,Point& p)
+	{
+		in >> p.m_x >> p.m_y >> p.m_z;
+		return in;
+	}
 };
 
 int main()
 {
 	using namespace std;
+
+	string str("out.txt");
+	//ofstream of("out.txt");
+	ifstream inf(str);
+
 	Point p1(1.1, 2.2, 3.3);
 	Point p2(4.3, 5.5, 6.7);
+	Point p3;
+
+	//cin >> p3;
+
+	/*of << p1 << endl;
+	of << p2 << endl;*/
+	
+	inf >> p1;
+	inf >> p2;
 
 	cout << p1 << endl;
 	cout << p2 << endl;
+	inf.close();
+	//of.close();
 
 	return 0;
 }
