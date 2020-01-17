@@ -38,17 +38,17 @@ public:
 		return m_name;
 	}
 
-	int getIntel() const
+	int getIntel()
 	{
 		return m_intel;
 	}
 
-	void study()
+	/*void study()
 	{
 		using namespace std;
 		cout << "study" << endl;
 		m_intel += 1;
-	}
+	}*/
 
 	friend std::ostream& operator << (std::ostream& out, const Student& student)
 	{

@@ -8,11 +8,11 @@ class Lecture
 private:
 	std::string m_name;
 	//std::string m_teacher;
-	Teacher m_teacher;
+	Teacher *m_teacher;
 
 
 	//std::string m_student;
-	Student m_student[3];
+	Student *m_student[3];
 	int index;
 
 	//Teacher teacher;
@@ -57,24 +57,37 @@ public:
 		students.push_back(student_input);
 	}*/
 
-	void assignTeacher(const Teacher& teacher)
+	void assignTeacher(Teacher* const teacher)
 	{
 		/*m_teacher = teacher.getName();*/
 		m_teacher = teacher;
 	}
-	void registerStudent(const Student& student)
+	void registerStudent(Student* student)
 	{
 		//m_student = student.getName();
 		m_student[index] = student;
 		index++;
+
+		// &student_input != &students[0]
+		std::cout << &student << ", " << &m_student[0] << std::endl;
+		
 	}
 
 	void study()
 	{
 		std::cout << m_name << " Study " << std::endl << std::endl;
 
-		for (auto& element : students)	// Note: 'auto element' doesn't work
-			element.setIntel(element.getIntel() + 1);
+		for (int i = 0; i < index; ++i)
+		{
+			m_student[i]->setIntel(m_student[i]->getIntel() + 1);
+		} //leeyunho
+
+
+		/*for (auto& element : m_student)
+			(*element).setIntel((*element).getIntel() + 1);*/
+
+		//for (auto& element : students)	// Note: 'auto element' doesn't work
+		//	element.setIntel(element.getIntel() + 1);
 
 		/*for (auto element : students)
 			(*element).setIntel((*element).getIntel() + 1);*/
@@ -84,7 +97,7 @@ public:
 		using namespace std;
 		out << "Lecture name: " << lecture.m_name << endl;
 
-		out << lecture.m_teacher << endl;
+		out << *lecture.m_teacher << endl;
 
 		/*for (auto element : lecture.students)
 			out << element << std::endl;*/
@@ -95,8 +108,11 @@ public:
 		
 		for (int i = 0; i < lecture.index; ++i)
 		{
-			out << lecture.m_student[i] << endl;
-		}
+			out << *(lecture.m_student[i]) << endl;
+		} // leeyunho
+
+
+		
 		
 
 		return out;

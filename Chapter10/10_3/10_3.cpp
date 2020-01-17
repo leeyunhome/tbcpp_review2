@@ -7,17 +7,23 @@ int main()
 {
     using namespace std;
 
+    Student std1("Leehyerim", 0);
+    Student std2("Changhajin", 1);
+    Student std3("beakyuri", 2);
+
+    Teacher teacher1("Prof. Hong");
+    Teacher teacher2("Prof. Good");
+
     // Composition Relationship
     Lecture lec1("Intoroduction to Computer Programming");
-    lec1.assignTeacher(Teacher("Prof. Hong"));
-    lec1.registerStudent(Student("leehyerim", 0));
-    lec1.registerStudent(Student("changhajin", 1));
-    lec1.registerStudent(Student("chominji", 2));
+    lec1.assignTeacher(&teacher1);
+    lec1.registerStudent(&std1);
+    lec1.registerStudent(&std2);
+    lec1.registerStudent(&std3);
 
     Lecture lec2("Computational Thinking");
-    lec2.assignTeacher(Teacher("Prof. Good"));
-    lec2.registerStudent(Student("leehyerim", 0));
-    lec2.registerStudent(Student("kimminjung", 5));
+    lec2.assignTeacher(&teacher2);
+    lec2.registerStudent(&std1);
 
     //Tod :imlement Aggregation Relationship
 
@@ -26,11 +32,13 @@ int main()
         cout << lec1 << endl;
         cout << lec2 << endl;
 
-        //// event
-        //lec2.study();
+        // event
+        lec2.study();
+        lec2.study();
+        lec2.study();
 
-        //cout << lec1 << endl;
-        //cout << lec2 << endl;
+        cout << lec1 << endl;
+        cout << lec2 << endl;
     }
 }
 
