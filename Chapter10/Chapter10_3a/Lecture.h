@@ -29,8 +29,9 @@ public:
 	void registerStudent(Student* const student_input)
 	{
 		students.push_back(student_input);
-
-		std::cout << &student_input << " " << &students[0] << std::endl;
+		
+		//std::cout << sizeof(student_input) << " " << *student_input << std::endl;
+		std::cout << student_input << " " << students.back() << std::endl;
 
 
 	}

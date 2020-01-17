@@ -10,23 +10,29 @@ int main()
 {
 	using namespace std;
 
-	Student std1("leeseonghee", 0);
+	Student *std1 = new Student("leeseonghee", 0);
+	Student *std2 = new Student("chominji", 1);
+	Student *std3 = new Student("kimnayeon", 2);
+
+	Teacher *teacher1 = new Teacher("Prof. Lee");
+	Teacher *teacher2 = new Teacher("Prof. Good");
+	/*Student std1("leeseonghee", 0);
 	Student std2("chominji", 1);
 	Student std3("kimnayeon", 2);
 
 	Teacher teacher1("Prof. Lee");
-	Teacher teacher2("Prof. Good");
+	Teacher teacher2("Prof. Good");*/
 
 	// Composition Relationship
 	Lecture lec1("Introduction to Computer Programming");
-	lec1.assignTeacher(&teacher1);
-	lec1.registerStudent(&std1);
-	lec1.registerStudent(&std2);
-	lec1.registerStudent(&std3);
+	lec1.assignTeacher(teacher1);
+	lec1.registerStudent(std1);
+	lec1.registerStudent(std2);
+	lec1.registerStudent(std3);
 
 	Lecture lec2("Computational Thinking");
-	lec2.assignTeacher(&teacher2);
-	lec2.registerStudent(&std1);
+	lec2.assignTeacher(teacher2);
+	lec2.registerStudent(std1);
 
 	// TOD : implement Aggregation Relationship
 
@@ -47,6 +53,13 @@ int main()
 	//TOD : class HobbyClub
 
 	//TOD : delete memory (if necessary)
+
+	delete std1;
+	delete std2;
+	delete std3;
+
+	delete teacher1;
+	delete teacher2;
 
 	return 0;
 }
