@@ -28,6 +28,10 @@ public:
 	}
 
 	// setIntel
+	void setIntel(const int& intel_in)
+	{
+		m_intel = intel_in;
+	}
 
 	std::string getName() const
 	{
