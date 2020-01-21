@@ -10,12 +10,10 @@ void countDown(int count)
 	if (count > 0)
 		countDown(count - 1);
 
-	cout << count << endl;
-
 }
 
 int main()
 {
-	countDown(5);
+	countDown(2);
 	return 0;
 }

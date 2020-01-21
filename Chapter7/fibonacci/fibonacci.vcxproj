@@ -20,11 +20,10 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
-    <ProjectGuid>{93609762-C3C0-469A-81DD-67CA2380F7FF}</ProjectGuid>
+    <ProjectGuid>{DBD660C2-03BA-4DB8-8596-96398AB1BF5C}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
-    <RootNamespace>My67</RootNamespace>
+    <RootNamespace>fibonacci</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
-    <ProjectName>6_17a</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -148,7 +147,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="6_17a.cpp" />
+    <ClCompile Include="fibonacci.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
