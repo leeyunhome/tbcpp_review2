@@ -56,10 +56,24 @@ public:
 	}
 };
 
+class Cow : public Animal
+{
+public:
+	Cow(string name)
+		: Animal(name)
+	{}
+
+	virtual void speak() const
+	{
+		cout << m_name << " Ah Huh.. " << endl;
+	}
+};
+
 int main()
 {
-	
+	Cow cow("leeminju");
 
+	cow.speak();
 	/*Animal animal("m animal");
 	Woman lsh("leeseonghee");
 	Dog dog("my dog");
