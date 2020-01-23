@@ -13,7 +13,7 @@ void printArray(int *array)
 
 struct S07
 {
-    int arr[5] = { 9, 7, 5, 3, 1 };
+    int arr[] = { 9, 7, 5, 3, 1 };
 };
 
 void printArray(struct S07* s1)
