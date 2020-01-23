@@ -27,6 +27,16 @@ public:
 		/*Digit temp;
 		temp = Digit(++m_digit);*/
 		++m_digit;
+		m_digit %= 10;
+		return *this;
+	}
+	// prefix
+	Digit& operator--()
+	{
+		/*Digit temp;
+		temp = Digit(++m_digit);*/
+		--m_digit;
+		m_digit %= 10;
 		return *this;
 	}
 
@@ -53,9 +63,9 @@ public:
 
 int main()
 {
-	Digit d1(7);
+	Digit d1(10);
 
-	d1++;
+	++d1;
 	d1.print();
 
 	/*++(++(++d1));
