@@ -9,7 +9,7 @@ public:
 	int m_data[100];
 
 public:
-	Resource()
+	Resource(int a)
 	{
 		std::cout << "Resource constructed" << std::endl;
 	}

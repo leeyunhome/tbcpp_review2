@@ -22,25 +22,26 @@ public:
 		return m_cents;
 	}
 
-	void print()
+	//void print()
+	//{
+	//	cout << m_cents << " " << &m_cents << endl;
+	//}
+
+	friend std::ostream& operator<<(std::ostream& out,const Cents& cents)
 	{
-		cout << m_cents << endl;
-	}
-	/*friend std::ostream& operator<<(std::ostream& out,const Cents& cents)
-	{
-		out << cents.m_cents;
+		out << cents.m_cents << " " << &cents.m_cents;
 		return out;
-	}*/
-
-	int operator-()
-	{
-		return -m_cents;
 	}
 
-	/*Cents operator-() const
+	//int operator-()
+	//{
+	//	return -m_cents;
+	//}
+
+	Cents operator-() const
 	{
 		return Cents(-m_cents);
-	}*/
+	}
 	
 	bool operator!() const
 	{
@@ -52,22 +53,24 @@ int main()
 {
 	Cents cents1(6);
 	Cents cents2(2);
+	
+	//(-(-(-cents1))).print();
 
-	(-(-(-cents1))).print();
 	//cout << cents1 << endl;
-	//cout << -cents1 << endl;
-	//cout << -(-cents1) << endl;
-	//cout << -(-(-cents1)) << endl;
-	//cout << -Cents(-20) << endl;
 
-	if (!cents2)
-	{
-		cout << cents2.getCents() << " is false" << endl;
-	}
-	else
-	{
-		cout << cents2.getCents() << " is true" << endl;
-	}
+	cout << -cents1 << endl;
+	cout << -(-cents1) << endl;
+	cout << -(-(-cents1)) << endl;
+	cout << -Cents(-20) << endl;
+
+	//if (!cents2)
+	//{
+	//	cout << cents2.getCents() << " is false" << endl;
+	//}
+	//else
+	//{
+	//	cout << cents2.getCents() << " is true" << endl;
+	//}
 
 	return 0;
 }
